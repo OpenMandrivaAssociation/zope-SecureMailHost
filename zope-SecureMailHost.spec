@@ -1,24 +1,24 @@
-%define product         SecureMailHost
-%define version         1.0.4
-%define release         1
+%define Product SecureMailHost
+%define product securemailhost
+%define name    zope-%{Product}
+%define version 1.1
+%define release %mkrel 1
 
 %define zope_minver     2.7
-
 %define zope_home       %{_prefix}/lib/zope
 %define software_home   %{zope_home}/lib/python
 
-
-Summary:        SecureMailHost is a reimplementation of the standard MailHost
-Name:           zope-%{product}
-Version:        %{version}
-Release:        %mkrel %{release}
-License:        ZPL
-Group:          System/Servers
-Source:         http://plone.org/products/securemailhost/releases/%{version}/SecureMailHost-%{version}.tar.bz2
-URL:            http://plone.org/products/securemailhost
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildArch:      noarch
-Requires:       zope >= %{zope_minver}
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Summary:    SecureMailHost is a reimplementation of the standard MailHost
+License:    ZPL
+Group:      System/Servers
+URL:        http://plone.org/products/%{product}
+Source:     http://plone.org/products/%{product}/releases/%{version}/%{Product}-%{version}.tar.gz
+Requires:   zope >= %{zope_minver}
+BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 SecureMailHost is a reimplementation of the standard MailHost with some 
@@ -82,8 +82,5 @@ if [ -f "%{_prefix}/bin/zopectl" ] && [ "`%{_prefix}/bin/zopectl status`" != "da
 fi
 
 %files
-%defattr(-, root, root, 0755)
+%defattr(-,root,root)
 %{software_home}/Products/*
-
-
-
