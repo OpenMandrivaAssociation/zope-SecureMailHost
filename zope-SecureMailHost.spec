@@ -18,6 +18,7 @@ URL:        http://plone.org/products/%{product}
 Source:     http://plone.org/products/%{product}/releases/%{version}/%{Product}-%{version}.tar.gz
 Requires:   zope >= %{zope_minver}
 BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 SecureMailHost is a reimplementation of the standard MailHost with some 
