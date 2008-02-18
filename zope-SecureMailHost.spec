@@ -11,7 +11,7 @@
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Summary:    SecureMailHost is a reimplementation of the standard MailHost
+Summary:    Reimplementation of the standard MailHost
 License:    ZPL
 Group:      System/Servers
 URL:        http://plone.org/products/%{product}
